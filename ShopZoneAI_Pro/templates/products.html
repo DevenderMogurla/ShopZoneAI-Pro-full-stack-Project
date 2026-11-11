@@ -1,0 +1,4 @@
+
+{% extends 'base.html' %}{% block title %}Shop · ShopZoneAI{% endblock %}{% block content %}
+<div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4"><div><div class="eyebrow">The collection</div><h1 class="h2">Discover products</h1><p class="muted mb-0">Find your next favourite.</p></div><form class="d-flex gap-2"><input class="form-control" name="q" placeholder="Search products..." value="{{ q }}"><select class="form-select" name="category"><option value="">All categories</option>{% for c in categories %}<option {{ 'selected' if c==category }}>{{ c }}</option>{% endfor %}</select><button class="btn btn-primary">Search</button></form></div>
+<div class="row g-3">{% for p in products %}<div class="col-6 col-lg-3">{% include 'product_card.html' %}</div>{% else %}<div class="col-12 panel p-5 text-center"><h4>No matching products</h4><p class="muted">Try another search or category.</p></div>{% endfor %}</div>{% endblock %}

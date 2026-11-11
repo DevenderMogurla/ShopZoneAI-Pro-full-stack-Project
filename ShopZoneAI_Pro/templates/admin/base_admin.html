@@ -1,0 +1,2 @@
+
+{% extends 'base.html' %}{% block content %}<div class="admin-layout"><aside class="admin-side"><div class="eyebrow px-2 mb-2">Control center</div><a href="{{ url_for('admin_dashboard') }}">▦ Overview</a><a href="{{ url_for('admin_products') }}">▣ Products</a><a href="{{ url_for('admin_orders') }}">◷ Orders & tracking</a><a href="{{ url_for('admin_users') }}">♙ Customers</a><hr class="border-secondary"><a href="{{ url_for('home') }}">View storefront ↗</a></aside><section>{% block admin_content %}{% endblock %}</section></div>{% endblock %}
